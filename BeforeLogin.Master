@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+CodeBehind="BeforeLogin.master.cs" Inherits="AdExcellence.BeforeLogin" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <title>Untitled Page</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript">
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                alert("Please Enter Only Numeric Value");
+                return false;
+            }
+
+            return true;
+        }
+        function isCharKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+
+            }
+            else {
+                alert("Please Enter Only Characters");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server"> </asp:ContentPlaceHolder>
+  </head>
+
+  <body>
+    <header>
+      <nav class="bg-white border-gray-200 px-[40px] py-2.5">
+        <div class="flex flex-wrap justify-between items-center mx-auto">
+          <a href="home.aspx" class="flex items-center">
+            <span class="self-center text-xl font-semibold whitespace-nowrap"
+              >AdExcellence</span
+            >
+          </a>
+
+          <div class="flex items-center lg:order-2 relative">
+
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-red-700  font-medium flex items-center justify-between w-full md:w-auto">Register <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+              <div id="dropdownNavbar" class="hidden bg-white text-base z-10 list-none absolute top-[24px] left-0 divide-y divide-gray-100 rounded shadow my-4 w-44">
+                  <ul class="py-1" >
+                  <li>
+                      <a href="SignUpU.aspx" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Register as User</a>
+                  </li>
+                  <li>
+                      <a href="SignUpH.aspx" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Register as Hoarding Owner</a>
+                  </li>
+              </div>
+
+
+            <a
+              href="Login.aspx"
+              class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              >Log in</a
+            >
+            <button
+              data-collapse-toggle="mobile-menu-2"
+              type="button"
+              class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              aria-controls="mobile-menu-2"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <svg
+                class="hidden w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+            >
+              <li>
+                <a
+                  href="home.aspx"
+                  class="block py-2 pr-4 pl-3 text-white rounded bg-red-700 lg:bg-transparent lg:text-red-700 lg:p-0"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="AboutUs.aspx"
+                  class="block py-2 pr-4 pl-3 text-gray-800 rounded lg:bg-transparent lg:p-0"
+                  aria-current="page"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ContactUs.aspx"
+                  class="block py-2 pr-4 pl-3 text-gray-800 rounded lg:bg-transparent lg:p-0"
+                  aria-current="page"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <form id="form1" runat="server">
+      <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+    </form>
+
+    <footer class="rounded-lg bg-gray-900 m-4 p-8">
+      <div class="w-full">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <a
+            href="Login.aspx"
+            class="text-white flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <span class="self-center text-2xl font-semibold whitespace-nowrap"
+              >AdExcellence</span
+            >
+          </a>
+          <ul
+            class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0"
+          >
+            <li>
+              <a href="AboutUs.aspx" class="hover:underline me-4 md:me-6"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="ContactUs.aspx" class="hover:underline me-4 md:me-6"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="FAQ.aspx" class="hover:underline me-4 md:me-6">FAQ</a>
+            </li>
+            <li>
+              <a href="PrivacyPolicy.aspx" class="hover:underline me-4 md:me-6"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <span class="block text-sm text-white sm:text-center"
+          >&copy; 2024-2025. All rights reserved,  Built with❤️ in India</span
+        >
+      </div>
+    </footer>
+
+
+    <script>
+      let dropdownMenuBtn = document.querySelector("#dropdownNavbarLink");
+      let dropdownMenu = document.querySelector("#dropdownNavbar");
+
+      let isMenuOpen = false;
+
+      dropdownMenuBtn.addEventListener("click",e=>{
+        if(isMenuOpen){
+          dropdownMenu.classList.add("hidden");
+          isMenuOpen=false;
+        }else{
+          dropdownMenu.classList.remove("hidden");
+          isMenuOpen=true;
+        }
+      })
+
+    </script>
+  </body>
+</html>

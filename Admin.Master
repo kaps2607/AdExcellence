@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs"
+Inherits="AdExcellence.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+  <head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript">
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                alert("Please Enter Only Numeric Value");
+                return false;
+            }
+
+            return true;
+        }
+        function isCharKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+
+            }
+            else {
+                alert("Please Enter Only Characters");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+  </head>
+  <body>
+    <header
+      class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 shadow-lg"
+    >
+      <nav
+        class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
+      >
+        <a class="flex-none text-xl font-semibold" href="#">AdExcellence</a>
+        <div
+          class="flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5"
+        >
+          <a
+            class="font-medium text-gray-600 hover:text-red-500"
+            href="VerifyAccount.aspx"
+            >Verify Account</a
+          >
+          <a
+            class="font-medium text-gray-600 hover:text-red-500"
+            href="LocationDetails.aspx"
+            >Location Details</a
+          >
+          <a
+            class="font-medium text-gray-600 hover:text-red-500"
+            href="Reports.aspx"
+            >Reports</a
+          >
+          <a
+            class="font-medium text-gray-600 hover:text-red-500"
+            href="AdminChangePassword.aspx"
+            >Change Password</a
+          >
+          <a
+            class="font-medium text-gray-600 hover:text-red-500"
+            href="Login.aspx"
+            >Logout</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <div class="p-6 w-full h-screen bg-slate-100">
+      <form id="form1" runat="server">
+        <div>
+          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+    <center>
+<table style="width:100%;">
+    
+    <tr>
+            <td colspan=3 >
+                <center><div  style="color: #38ACEC;  font-weight:bold; font-family: courier; font-size: 300%; text-decoration: underline;"><u>
+                    Sign Up As Hoarding Owner</u></div></center></td>
+            
+                <tr><td colspan=3>&nbsp;</td></tr>
+        </tr>
+        
+    <tr>
+            <td class="style1">
+                &nbsp;</td>
+            <td class="style4">
+                <asp:Label ID="lblid" runat="server" Width="218px" Visible="False"></asp:Label>
+            </td>
+            <td>
+                &nbsp;</td>
+                
+        </tr>
+        <tr>
+            <td class="style1">
+                <strong>Name:</strong></td>
+            <td class="style4">
+                <asp:TextBox ID="txtname" runat="server" Width="218px"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="txtname" Display="None" ErrorMessage="Enter your name"></asp:RequiredFieldValidator>
+            </td>
+                <tr><td colspan=3>&nbsp;</td></tr>
+        </tr>
+        
+        
+        <tr>
+            <td class="style1">
+                <strong>Email-id:</strong></td>
+            <td class="style4">
+                <asp:TextBox ID="txtemail" runat="server" Width="218px"></asp:TextBox>
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="Enter email-id" ControlToValidate="txtemail" Display="None"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ErrorMessage="Enter correct email-id" ControlToValidate="txtemail" 
+                    Display="None" 
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            </td>
+                
+        </tr>
+        <tr><td colspan=3>&nbsp;</td></tr>
+        
+        
+        
+        <tr>
+            <td class="style1">
+                <strong>Mobile:</strong></td>
+            <td class="style4">
+                <asp:TextBox ID="txtMobile" runat="server" Width="218px"></asp:TextBox>
+            </td>
+            <td>
+                
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ControlToValidate="txtMobile" Display="None" 
+                    ErrorMessage="Enter Mobile Number"></asp:RequiredFieldValidator>
+                
+            </td>
+                <tr><td colspan=3>&nbsp;</td></tr>
+        </tr>
+        <tr>
+            <td class="style1">
+                <strong>Full Address:</strong></td>
+            <td class="style4" style="margin-left: 40px">
+                <asp:TextBox ID="txtadd" TextMode="MultiLine" runat="server" Width="218px" 
+                    Height="54px" ontextchanged="txtadd_TextChanged"></asp:TextBox>
+            </td>
+            <td>
+                
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ControlToValidate="txtadd" Display="None" ErrorMessage="Enter Address"></asp:RequiredFieldValidator>
+                
+            </td>
+                <tr><td colspan=3>&nbsp;</td></tr>
+        </tr>
+        <tr>
+            <td class="style1">
+                <strong>City:</strong></td>
+            <td class="style4">
+                <asp:TextBox ID="txtcity" runat="server" Width="218px"></asp:TextBox>
+            </td>
+            <td>
+            
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                    ControlToValidate="txtcity" Display="None" ErrorMessage="Enter City."></asp:RequiredFieldValidator>
+            
+            </td>
+                <tr><td colspan=3>&nbsp;</td></tr>
+        </tr>
+        <tr>
+            <td class="style1">
+                <strong>State:</strong></td>
+            <td class="style4">
+                <asp:TextBox ID="txtState" runat="server" Width="218px"></asp:TextBox>
+            </td>
+            <td>
+                
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                    ControlToValidate="txtState" Display="None" ErrorMessage="Enter State"></asp:RequiredFieldValidator>
+                
+            </td>
+                <tr><td colspan=3>&nbsp;</td></tr>
+        </tr>
+        
+        <tr>
+            <td class="style1">
+                <strong>Landmark:</strong></td>
+            <td class="style4">
+                <asp:TextBox ID="txtLandmark" runat="server" Width="218px"></asp:TextBox>
+            </td>
+            <td>
+                
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                    ControlToValidate="txtLandmark" Display="None" 
+                    ErrorMessage="Enter Landmark"></asp:RequiredFieldValidator>
+                
+            </td>
+                <tr><td colspan=3>&nbsp;</td></tr>
+        </tr>
+        
+        
+           <tr>
+                <td class="style2">
+                    <strong>Upload Aadhar:</strong></td>
+                <td class="style5">
+                     <asp:Image ID="Image1" runat="server" Height="220px" Width="200px" 
+                    AlternateText="No Image" ForeColor="Red" ImageUrl="~/images/noimgjpg.jpg" /><br />
+                    <asp:FileUpload ID="FileUpload1" runat="server" /> 
+                </td>
+                <td class="style3">
+                    
+                    </td>
+                
+            </tr>
+     <tr><td colspan=3 class="style3"></td></tr>
+
+        
+        
+        
+         <tr>
+            <td colspan="3" >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:ImageButton ID="btnSave" runat="server" Height="55px" 
+                    ImageUrl="~/images/submit1.jpg" Width="146px" onclick="btnSave_Click" />
+                                <asp:ImageButton ID="btnCancel" runat="server" Height="55px" 
+                    ImageUrl="~/images/Reset.jpg" onclick="btnCancel_Click" Width="146px" 
+                    CausesValidation="False" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="3">
+                &nbsp;</td>
+        </tr>
+
+       <tr><td colspan=3 class="style6">&nbsp;<asp:ValidationSummary 
+               ID="ValidationSummary1" runat="server" ShowMessageBox="True" 
+               ShowSummary="False" />
+           </td></tr>
+
+    </table>
+    </center>
+</div>
